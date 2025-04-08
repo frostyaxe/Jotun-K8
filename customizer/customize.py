@@ -1,12 +1,14 @@
 from pydantic import BaseModel
 from .mem_manager import MemManagerImpl
+from .replicas_manager import ReplicasManagerImpl
 from .jotun_model import ModelInterface
 
 class Customizer:
       
     def __init__(self):
         self.model_registry = {
-                "mem_manager": MemManagerImpl
+                "mem_manager": MemManagerImpl,
+                "replicas_manager": ReplicasManagerImpl,
             }
 
     def get_request_model(self, model_name: str):

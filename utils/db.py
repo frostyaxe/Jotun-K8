@@ -107,7 +107,7 @@ class JotunDBUtils:
             with cusor_context() as cursor:
                 cursor.execute(sql_select)
                 rows = cursor.fetchall()
-                result = { row["model_name"]: {k:v for row in rows for k,v in dict(row).items() if k != "model_name"} for row in rows }
+                result = { row["model_name"]: {k: v for k, v in dict(row).items() if k != "model_name"} for row in rows }
             return result, None
         except Error as e:
             return {}, e
