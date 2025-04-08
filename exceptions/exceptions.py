@@ -1,0 +1,2 @@
+class GracefulShutdown(Exception):
+    pass
